@@ -5,9 +5,11 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
+const basePath = import.meta.env.BASE_URL;
+
 const audioFiles = {
-  guitar: "/assets/audios/guitar.wav",
-  piano: "/assets/audios/piano.wav",
+  guitar: `${basePath}assets/audios/guitar.wav`,
+  piano: `${basePath}assets/audios/piano.wav`,
 };
 
 const buffers = {};
@@ -39,13 +41,31 @@ function playLoop(name) {
 
   const duration = loopDurations[name];
   const offset = (audioCtx.currentTime - startTime) % duration;
-  const startAt = audioCtx.currentTime + (duration - offset);
+  const delay = duration - offset;
+  const startAt = audioCtx.currentTime + delay;
 
   source.start(startAt);
   sources[name] = source;
   isPlaying[name] = true;
 
-  console.log(`[${name}] playLoop aufgerufen`);
+  const statusText = document.getElementById("status-text");
+
+  // Live-Countdown starten
+  const start = performance.now();
+  const interval = setInterval(() => {
+    const elapsed = (performance.now() - start) / 1000;
+    const remaining = Math.max(0, delay - elapsed);
+    statusText.textContent = `${name} startet in ${remaining.toFixed(
+      1
+    )} Sekunden…`;
+
+    if (remaining <= 0) {
+      clearInterval(interval);
+      statusText.textContent = "";
+    }
+  }, 100); // alle 100ms aktualisieren
+
+  console.log(`[${name}] startet in ${delay.toFixed(2)}s`);
 }
 
 // Loop stoppen
