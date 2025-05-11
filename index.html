@@ -5,36 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>amelie</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet" />
-    <script type="module" crossorigin src="/ar-band/assets/main-DaXQeXcc.js"></script>
-    <link rel="stylesheet" crossorigin href="/ar-band/assets/main-CTmdyQDz.css">
+    <script type="module" crossorigin src="/ar-band/assets/main-B2BHZ8v5.js"></script>
+    <link rel="stylesheet" crossorigin href="/ar-band/assets/main-KJPQg1iz.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand ms-5" href="#">amelie</a>
+      <div class="container">
+        <a class="navbar-brand" href="#">amelie</a>
+
+        <!-- Burger-Button mit Bootstrap Icon -->
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav">
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Collapse-Menü -->
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav">
           <ul class="navbar-nav">
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a class="btn btn-outline-dark" href="#">about</a>
-            </li> -->
+            </li>
+            <!-- weitere Nav-Links hier -->
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="mt-5 container-sm">
-      <div class="d-flex flex-column align-items-center bg-light p-4 rounded-3">
+    <div class="mt-5 container-sm" style="max-width: 450px">
+      <div
+        class="d-flex flex-column align-items-center bg-light p-4 rounded-3"
+        style="border: 1px solid #000">
         <h1 class="text-center">Will you just Stay Here?</h1>
         <p class="text-center">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, beatae
