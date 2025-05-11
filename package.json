@@ -14,8 +14,11 @@
   },
   "keywords": [],
   "dependencies": {
-    "bootstrap": "^5.3.5",
+    "@loadingio/loading.css": "^3.2.1",
+    "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.12.1",
+    "ldbutton": "^2.0.5",
+    "sass": "^1.87.0",         
     "three": "^0.176.0"
   },
   "devDependencies": {

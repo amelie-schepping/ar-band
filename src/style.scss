@@ -1,0 +1,78 @@
+// 1. Bootstrap Funktionen zuerst
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Bootstrap-Variablen überschreiben
+// Schriftart global
+$font-family-base: "Instrument Serif", serif;
+
+// SButton-Design
+$btn-font-family: "Instrument Serif", serif;
+$btn-font-style: italic;
+$btn-border-radius: 999rem;
+$btn-padding-y: 0.1rem;
+$btn-padding-x: 1.5rem;
+$btn-font-size: 1.2rem;
+
+// Farben & Body
+$body-bg: #fcfbf9;
+$light: #fcfbf9;
+
+// 3. Bootstrap Required Parts
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+// 4. Optional: Nur die Komponenten, die du brauchst
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/modal";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// 5. Eigene Styles (optional)
+@font-face {
+  font-family: "Nexa";
+  src: url("/assets/fonts/nexa/Nexa-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+.btn {
+  font-style: italic;
+}
+
+.navbar-brand {
+  font-size: 2.5rem;
+}
+
+.navbar {
+  border-bottom: 1px solid #000; // oder z. B. rgba(0, 0, 0, 0.1)
+}
+
+// .main-container {
+//   // background-image: url("/assets/images/bg.svg");
+//   background-color: #fcfbf9;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   background-size: contain; // oder 'cover' für Vollbild, 'auto' für Originalgröße
+//   min-height: 70vh;
+// }
+
+body {
+  background-image: url("/assets/images/background.png"); // z. B. Textur, Foto, Farbfläche
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; // füllt gesamten Viewport
+  min-height: 100vh;
+}
+
+p {
+  font-family: "Nexa", sans-serif;
+}
