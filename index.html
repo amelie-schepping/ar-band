@@ -10,13 +10,22 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet" />
-    <script type="module" crossorigin src="/ar-band/assets/main-B2BHZ8v5.js"></script>
-    <link rel="stylesheet" crossorigin href="/ar-band/assets/main-KJPQg1iz.css">
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
+    <script type="module" crossorigin src="/ar-band/assets/main-Cq6Gf6gr.js"></script>
+    <link rel="stylesheet" crossorigin href="/ar-band/assets/main-C9RB0CHl.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">amelie</a>
+        <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+          <img
+            src="/ar-band/assets/images/amelieLogo.svg"
+            alt="Amelie Logo"
+            height="55"
+            style="width: auto" />
+          <span>amelie</span>
+        </a>
 
         <!-- Burger-Button mit Bootstrap Icon -->
         <button
@@ -44,25 +53,133 @@
       </div>
     </nav>
 
-    <div class="mt-5 container-sm" style="max-width: 450px">
-      <div
-        class="d-flex flex-column align-items-center bg-light p-4 rounded-3"
-        style="border: 1px solid #000">
-        <h1 class="text-center">Will you just Stay Here?</h1>
-        <p class="text-center">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, beatae
-          aliquam voluptate expedita.
-        </p>
-        <div class="button-group d-flex flex-column gap-3">
-          <button id="piano-btn" class="btn btn-outline-dark">piano</button>
-          <button id="eguitar-btn" class="btn btn-outline-dark">
-            e-guitar
-          </button>
-          <button id="pad-btn" class="btn btn-outline-dark">pad</button>
-          <button id="strings-btn" class="btn btn-outline-dark">strings</button>
-          <button id="melody-btn" class="btn btn-outline-dark">melody</button>
+    <div class="main-layout d-flex">
+      <!-- Linke Seite: Text und Buttons -->
+      <div class="text-side p-4">
+        <div
+          class="d-flex flex-column align-items-center bg-light p-5 rounded-3"
+          style="border: 1px solid #000; width: 500px">
+          <h1 class="text-center">
+            "you're the first thing that i think of when i wake up."
+          </h1>
+          <p class="text-center">
+            click the buttons below to create your own looped version of "stay
+            here".
+          </p>
+          <div class="button-group d-flex flex-column gap-3">
+            <div
+              class="d-flex align-items-center justify-content-between gap-3">
+              <button id="piano-btn" class="btn btn-outline-dark flex-shrink-0">
+                piano
+              </button>
+              <input
+                type="range"
+                id="piano-volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                class="form-range w-100" />
+            </div>
+            <div
+              class="d-flex align-items-center justify-content-between gap-3">
+              <button
+                id="eguitar-btn"
+                class="btn btn-outline-dark flex-shrink-0">
+                e-guitar
+              </button>
+              <input
+                type="range"
+                id="eguitar-volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                class="form-range w-100" />
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <button id="pad-btn" class="btn btn-outline-dark">pad</button>
+              <input
+                type="range"
+                id="pad-volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                class="form-range w-100" />
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <button id="strings-btn" class="btn btn-outline-dark">
+                strings
+              </button>
+              <input
+                type="range"
+                id="strings-volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                class="form-range w-100" />
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <button id="melody-btn" class="btn btn-outline-dark">
+                melody
+              </button>
+              <input
+                type="range"
+                id="melody-volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                class="form-range w-100" />
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Rechte Seite: Grafiken -->
+
+      <div
+        class="graphics-side p-4 d-flex justify-content-center align-items-center flex-wrap gap-3">
+        <img
+          id="img-piano"
+          src="/ar-band/assets/images/piano.svg"
+          class="instrument-img d-none floating"
+          alt="piano"
+          style="top: 20%; left: 10%; position: absolute" />
+        <img
+          id="img-eguitar"
+          src="/ar-band/assets/images/guitar.svg"
+          class="instrument-img d-none floating"
+          alt="eguitar"
+          style="top: 50%; left: 10%; position: absolute" />
+        <img
+          id="img-pad"
+          src="/ar-band/assets/images/pad.svg"
+          class="instrument-img d-none floating"
+          alt="pad"
+          style="top: 10%; right: 20%; position: absolute" />
+        <img
+          id="img-strings"
+          src="/ar-band/assets/images/strings.svg"
+          class="instrument-img d-none floating"
+          alt="strings"
+          style="top: 40%; right: 10%; position: absolute; width: 150px" />
+        <img
+          id="img-melody"
+          src="/ar-band/assets/images/amelieLogo.svg"
+          class="instrument-img d-none floating"
+          alt="melody"
+          style="
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 100px;
+          " />
+      </div>
     </div>
+
   </body>
 </html>
